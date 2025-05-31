@@ -1,0 +1,9 @@
+{
+  "repositories": [
+    {
+      "url": "https://github.com/preetamsashankreddy/t1.git",
+      "branch": "main",
+      "tag": "v1.0.0"
+    }
+  ]
+}
