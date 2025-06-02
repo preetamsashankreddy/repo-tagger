@@ -2,26 +2,6 @@ import json
 import os
 import subprocess
 
-
-def run_git_command1(args, cwd=None):
-	cmd = ['git'] + args
-	print(f'command = {cmd}')
-	print(f'cwd = {cwd}')
-	if cwd and not os.path.exists(cwd):
-		print(f"Directory does not exist: {cwd}")
-		return
-	print("Directory exists", cwd)
-	print("Calling subprocess")
-	result = None
-	try:
-		result = subprocess.run(["dir"], shell=True, capture_output=True, text=True)
-	except Exception as e:
-		print('result= {0}'.format(result))
-		print("exception : ", e)
-		raise e
-
-
-
 def run_git_command(args, cwd=None):
 	cmd = ['git'] + args
 	print(f'command = {cmd}')
@@ -57,8 +37,8 @@ def main():
 		print(f"repos = {repos}")
 	for repo in repos['repositories']:
 		url = repo['url']
-		branch = repo['branch']
-		tag = repo['tag']
+		branch = repo['object']
+		tag = repos['apply_tag']
 		try:
 			clone_and_tag_repo(url, branch, tag)
 		except Exception as e:
@@ -66,4 +46,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-

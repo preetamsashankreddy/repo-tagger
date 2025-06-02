@@ -1,9 +1,13 @@
 {
+  "apply_tag": "v1.0.1",
   "repositories": [
     {
       "url": "https://github.com/preetamsashankreddy/t1.git",
-      "branch": "main",
-      "tag": "v1.0.0"
+      "object": "main"
+    },
+    {
+      "url": "https://github.com/preetamsashankreddy/t1.git",
+      "object": "main"
     }
   ]
 }
